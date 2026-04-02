@@ -17,19 +17,73 @@
 		}
 
 		/* YOUR CSS CODE WILL GO HERE */
-
+		.line1 { fill: #0052A4; } /* 1호선 파랑 */
+		.line2 { fill: #00A84D; } /* 2호선 초록 */
+		.line3 { fill: #EF7C1C; } /* 3호선 주황 */
+		
+		/* 선의 색상과 두께 지정 */
+		.axis {
+			stroke: #333;
+			stroke-width: 2px;
+		}
+		.bar {
+			width: 50px; /* 막대 너비 */
+		}
+		.tick-label {
+			font-size: 10px;
+			fill: #667;
+		}
+		.axis-title {
+			font-size: 18px;
+			font-weight: bold;
+			fill: #333;
+		}
 
 	</style>
 </head>
 
 <body>
 	<h1 id="header-title">
-		In-Class Acitivity by REPLACE_WITH_YOUR_NAME
+		In-Class Acitivity by Giwan Eom
 	</h1>
 
 	<svg id="visualization-activity">
 		<!-- YOUR SVG CODE WILL GO HERE -->
+		<text x="50" y="250" class="axis-title" transform="rotate(-90, 50, 250)" font-size="20" text-anchor="middle">Entry Count</text>
+		<text x="350" y="495" class="axis-title" font-size="20" text-anchor="middle">Station Name</text>
 
+		<g id="axis-group">
+			<line x1="100" y1="50" x2="100" y2="450" class="axis" />
+			<line x1="100" y1="450" x2="600" y2="450" class="axis" />
+		</g>
+
+		<g id="bar-group">
+			<rect x="120" y="100" width="50" height="350" class="bar line2" />
+			<text x="145" y="470" font-size="12" text-anchor="middle">홍대입구</text>
+			
+			<rect x="200" y="147" width="50" height="303" class="bar line2" />
+			<text x="225" y="470" font-size="12" text-anchor="middle">잠실</text>
+
+			<rect x="280" y="193" width="50" height="257" class="bar line3" />
+			<text x="305" y="470" font-size="12" text-anchor="middle">고속터미널</text>
+
+			<rect x="360" y="255" width="50" height="195" class="bar line1" />
+			<text x="385" y="470" font-size="12" text-anchor="middle">서울역</text>
+
+			<rect x="440" y="266" width="50" height="184" class="bar line2" />
+			<text x="465" y="470" font-size="12" text-anchor="middle">신림</text>
+
+			<rect x="520" y="270" width="50" height="180" class="bar line2" />
+			<text x="545" y="470" font-size="12" text-anchor="middle">신도림</text>
+		</g>
+
+		<g class="tick-labels">
+			<text x="95" y="455" class="tick-label" text-anchor="end">0</text>
+			<text x="95" y="360" class="tick-label" text-anchor="end">20,000</text>
+			<text x="95" y="265" class="tick-label" text-anchor="end">40,000</text>
+			<text x="95" y="170" class="tick-label" text-anchor="end">60,000</text>
+			<text x="95" y="75" class="tick-label" text-anchor="end">80,000</text>
+		</g>
 
 	</svg>
 
